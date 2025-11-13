@@ -1,5 +1,5 @@
 
-var eb = new DesignPattern.DesignPattern.BuilderPattern.EndpointBuilder("http://localhost:3000/");
+var eb = new DesignPattern.BuilderPattern.EndpointBuilder("http://localhost:3000/");
 
 eb.Append("api")
   .Append("v1")

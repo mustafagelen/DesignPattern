@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace DesignPattern.DesignPattern.BuilderPattern
+namespace DesignPattern.BuilderPattern
 {
     public class EndpointBuilder
     {
