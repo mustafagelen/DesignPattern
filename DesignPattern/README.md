@@ -1,1 +1,0 @@
-Design Pattern Explanations and Examples
