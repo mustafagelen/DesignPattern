@@ -1,6 +1,16 @@
 ﻿
 
 
+AnkaraPizzaStore ankaraStore = new();
+IstanbulPizzaStore istStore = new();
+
+IPizza cheesePizza = ankaraStore.OrderPizza("cheese");
+Console.WriteLine("Cheese pizza orderen in Ankara store");
+
+IPizza veggiePizza = istStore.OrderPizza("vegie");
+Console.WriteLine("Cheese pizza orderen in İstanbul     store");
+
+
 
 interface IPizza
 {
@@ -59,7 +69,21 @@ abstract class PizzaStore
     }
 }
 
-class InstanbulPizzaStore : PizzaStore
+class IstanbulPizzaStore : PizzaStore
+{
+    protected override IPizza CreaterPizze(string type)
+    {
+        return type switch
+        {
+            "cheese" => new CheesePizza(),
+            "veggie" => new VegiePizza(),
+            _ => throw new ArgumentNullException("invalid pizza type", nameof(type)),
+
+        };
+    }
+}
+
+class AnkaraPizzaStore : PizzaStore
 {
     protected override IPizza CreaterPizze(string type)
     {
